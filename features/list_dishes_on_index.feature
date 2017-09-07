@@ -26,6 +26,6 @@ Scenario: user sees the price of a dish
   And I visit the site
   Then I should se a message saying "a delicous pasta dish with egg and bacon"
 
-  Scenario: user visits the site
-    Given I visit the site
-    Then I should se a message saying "Spice It Up"
+Scenario: user visits the site
+  Given I visit the site
+  Then I should se a message saying "Spice It Up"
