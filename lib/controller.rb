@@ -52,7 +52,6 @@ class SlowFood < Sinatra::Base
   end
 
   post '/auth/create' do
-    binding.pry
     user = User.new(params[:user])
     if user.valid?
       user.save
