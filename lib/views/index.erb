@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Spice It Up</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Spice It Up</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -10,7 +10,8 @@
   <pre>Contact information:  email: you_wanna@spice_it_up.now  |  Address: Spice rd 1, 234 56 It, Up  |  Owner: Hothead-Hermes</pre>
   <h1>Restaurant Spice It Up</h1>
   <p>Opening hours: 12.00-24.00</p>
-   Welcome to Spice It Up! Are you tired of the same boring food day after day? Don't worry, we got your back! We specialise in the best food from Iceland, Kyrgyzstan, South Africa and Sweden. Try it out!
+  Welcome to Spice It Up! Are you tired of the same boring food day after day? Don't worry, we got your back! We
+  specialise in the best food from Iceland, Kyrgyzstan, South Africa and Sweden. Try it out!
 </div>
 
 <div align="center">
@@ -20,15 +21,18 @@
     <% @dishes_by_category.each do |key, category| %>
       <h2> <%= key %> </h2>
       <% category.each do |dish| %>
-        <h3> <%= dish.name %> </h3>
-        <p> <%= dish.description %> </p>
-        <p> Price: <%= dish.price %> kr </p>
-        <% end %>
+        <div id="<%= "dish_#{dish.id}" %>">
+          <h3> <%= dish.name %> </h3>
+          <p> <%= dish.description %> </p>
+          <p> Price: <%= dish.price %> kr </p>
+          <a href="<%= "/order/add/#{dish.id}" %>">Add</a>
+        </div>
+      <% end %>
     <% end %>
   <% else %>
     <p>There are no dishes in the system!</p>
   <% end %>
 
-  </div>
+</div>
 </body>
 </html>

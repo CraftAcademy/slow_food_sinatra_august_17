@@ -13,6 +13,8 @@ class User
   property :phone_number, String
   property :address, String
 
+  has n, :orders
+
 
   def authenticate(attempted_password)
     if self.password == attempted_password

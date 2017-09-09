@@ -56,3 +56,10 @@ end
 Given(/^There is a user called Thomas in our database$/) do
   User.create(firstname: "Name", lastname: "last name", username: "Thomas", password: "passw", email: "somewhere@some.com", phone_number: "1234556")
 end
+
+
+And(/^I am logged in as Thomas$/) do
+  user = User.first(username: 'Thomas')
+  login_as user
+end
+
